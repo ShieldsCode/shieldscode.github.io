@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+<header>
+    <nav class="headerflex">
+      <img class="responsive" id="Logo" src="images/LogoCropped.png" alt="Logo">
+    </nav>
+    <h1>&nbsp; Aimee Shields &nbsp;</h1>
+    <p>Game and Software Developer.</p>
+    <div class="spacer"></div>
+    <nav class="mainHeader">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class"active">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="myWork.html">My Work</a>
+        <a href="#contactme">Contact Me</a>
+      </nav>
+    </nav>
+</header>
+
+<main>
+
+  <section id="Programming Projects">
+    <h1>Projects</h1>
+    <p> This is the general landing page for my work- I mainly work in programming, so I'll
+      have dedicated pages for the systems I've been tinkering with lately when they're complicated
+      enough to be able to go in-depth.</p>
+    <p> If you're interested in a particular system I've worked on, check it out below!.</p>
+  </section>
+  
+  <section id="mywork">
+    <h2> Unity</h2>
+    <ul>
+      <li><a href="#unityEvents">Extending the Unity Event System</a></li>
+      <li><a href="#combatBasics">Implementing Basic Combat in Games</a></li>
+      <li><a href="#IKMath">Bluffing IK with Math</a></li>
+      <li>My Art</li>
+    </ul>
+  </section>
+
+  <section class="segmentSection" id="unityEvents">
+    <h1>Custom Unity Events, Custom Info</h1>
+    <p>Unity already has a pretty good event system- UnityEvents can be registered in scripts 
+      to fire off to registered listeners, with specific numbers of arguments of almost any
+      type. Since my Capstone game had a system of Instances to retain conceptual information
+      when their corresponding objects weren't active in the scene, I wrote an extension that inherited
+      from the original UnityEvent class and specified a series of identifiers that would be passed 
+      to listener functions, with some expanded functionality.
+    </p>
+
+    <section class="codeblock" id="eventManager">
+      <h2>Unity Event Extended Class</h2>
+      <p>
+      </p>
+      <code>
+        [System.Serializable] <br>
+        public class HonkEvent : UnityEvent<HonkEventType, string, HonkEntity, object>  <br>
+        {  <br>
+        &nbsp; //Properties  <br>
+        &nbsp; protected HonkEventType eventType;  <br>
+        &nbsp; protected string subjectName;  <br>
+        &nbsp; protected HonkObject subjectObject = null;  <br>
+        &nbsp; protected HonkEntity subjecyEntity = null;  <br>
+        &nbsp; protected string message;  <br>
+        <br>
+        &nbsp; //Getters  <br>
+        &nbsp; public HonkEventType Type { get { return eventType; } }  <br>
+        &nbsp; public string SubjectName { get { return subjectName; } }  <br>
+        &nbsp; public HonkObject SubjectObject { get { return subjectObject; } }  <br>
+        &nbsp; public HonkEntity SubjectEntity { get { return subjecyEntity; } }  <br>
+        &nbsp; public string Message { get { return message; } } <br>
+        <br>
+        &nbsp; public virtual void InitHonkEvent(HonkEventType type, string name, HonkEntity entity = null) <br>
+        &nbsp; {  <br>
+        &nbsp; &nbsp; eventType = type;  <br>
+        &nbsp; &nbsp; subjectName = name;  <br>
+        &nbsp; &nbsp; subjecyEntity = entity;  <br>
+        &nbsp; &nbsp; if (subjecyEntity != null)  <br>
+        &nbsp; &nbsp; {  <br>
+        &nbsp; &nbsp; &nbsp; if (subjecyEntity is HonkInstance hi)  <br>
+        &nbsp; &nbsp; &nbsp; { <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; subjectObject = hi.honkObject; <br>
+        &nbsp; &nbsp; &nbsp; } <br>
+        &nbsp; &nbsp; } <br>
+        &nbsp; &nbsp; message = string.Empty; <br>
+        &nbsp; } <br>
+        &nbsp; public virtual void setMessage(string newMessage) <br>
+        &nbsp; { <br>
+        &nbsp; &nbsp; message = newMessage; <br>
+        &nbsp; } <br>
+
+        }
+      </code>
+    </section>
+
+    <p>There's a couple things added to the system here that I'll explain. </p>
+
+    <section class="codeblock" id="eventClass">
+      <h2>Code Example</h2>
+      <p>
+      </p>
+      <code>
+        if (foo == bar){ <br>
+        &nbsp; printf("this is a test"); <br>
+        }
+      </code>
+    </section>
+    <p>[end of explanation]</p>
+  </section>
+
+  <section class="segmentSection" id="combatBasics">
+    <h1>Combat: State Machines</h1>
+    <p>[talk abt combat here]</p>
+
+    <section class="codeblock" id="stateMachine">
+      <h2>Code Example</h2>
+      <p>
+      </p>
+      <code>
+        if (foo == bar){ <br>
+        &nbsp; printf("this is a test"); <br>
+        }
+      </code>
+    </section>
+
+    <p>[blah blab more event stuff]</p>
+
+    <section class="codeblock" id="setState">
+      <h2>Code Example</h2>
+      <p>
+      </p>
+      <code>
+        if (foo == bar){ <br>
+        &nbsp; printf("this is a test"); <br>
+        }
+      </code>
+    </section>
+    <p>[end of explanation]</p>
+  </section>
+
+
+
+  <section class="segmentSection" id="IKMath">
+    <h1>Convincingly Faking IK in a Pinch</h1>
+    <p>[talk abt combat here]</p>
+
+    <section class="codeblock" id="IK">
+      <h2>Code Example</h2>
+      <p>
+      </p>
+      <code>
+        if (foo == bar){ <br>
+        &nbsp; printf("this is a test"); <br>
+        }
+      </code>
+    </section>
+
+    <p>[blah blab more event stuff]</p>
+
+    <section class="codeblock" id="offhand">
+      <h2>Code Example</h2>
+      <p>
+      </p>
+      <code>
+        if (foo == bar){ <br>
+        &nbsp; printf("this is a test"); <br>
+        }
+      </code>
+    </section>
+    <p>[end of explanation]</p>
+  </section>
+  
+
+</main>
+
+<footer>
+  <p> Reach out to me on Github or Linkedin!</p>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="https://www.linkedin.com/in/aimee-shields-b161a639b/" title="Visit my LinkedIn profile!" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ShieldsCode" title="Visit my Github profile!" target="_blank">Github</a>
+    </nav>
+</footer>
+
+</body>
+
+</html>
