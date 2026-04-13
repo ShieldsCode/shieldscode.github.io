@@ -13,11 +13,39 @@ body  {
 }
 
 header {
+  position:sticky;
+  top: 0;
+  z-index:1000;
   background-color: #88cad2;
-  padding: 1rem;
+  padding: 0.5rem;
   box-shadow: 0px 0.5rem #222A68;
-  margin-bottom: 0.5rem;
-  text-align: center;
+  margin-bottom: 0rem;
+  text-align:end;
+  justify-content: left baseline;
+  display:flex;
+  align-items:center;
+}
+
+.headerFlex{
+  display: inline;
+  margin-right: 2rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+img.responsive {
+  max-width:100%; 
+  height:auto; 
+}
+
+#Logo {
+  max-width: 100%;
+  width: 5rem;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
 }
 
 .site-nav a {
@@ -45,6 +73,19 @@ section {
   background: #FFF8F0;
   padding: 24px;
   border-radius: 6px;
+}
+
+.codeblock {
+  background:#ffffff;
+  border: 2px solid #222A68;
+  border-left: 4px solid #222A68;
+  padding: 1em;
+  padding-top: 0em;
+  display:block;
+  margin: 1rem;
+  margin-bottom: 1.6em;
+  box-shadow: 0px 0.5rem #222A68;
+  font-family:'Courier New', Courier, monospace;
 }
 
 h1 {
